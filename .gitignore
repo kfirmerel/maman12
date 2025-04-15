@@ -1,1 +1,5 @@
 magic
+magic.o
+test
+test.c
+utils.o
