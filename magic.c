@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     printf("1\t2\t3\n4\t5\t6\n7\t8\t9\n");
     printf("__________________\n");
     printf("The program is now suitable for matrix of %d*%d (%d numbers).\nThe numbers you enter need to be separated by space, tab or enter.\nWhen you finished press ctrl+d. \n",N,N,N*N);
+    printf("__________________\n");
     for (i = 0; i < N*N*N; i++)
     {
         type = scanf("%d", &temp);
