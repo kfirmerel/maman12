@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
         }
         if (type != 1)
         {
-            printf("\nProgram stopped - invalid input, you need to enter only integer\n");
+            printf("\nProgram stopped - invalid input, you need to enter only integers\n");
             return 0;
         }
         input[i] = temp;
