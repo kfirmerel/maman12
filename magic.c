@@ -34,19 +34,19 @@ int main(int argc, char *argv[])
         }
         if (type != 1)
         {
-            printf("\nprogram stopped - invalid input, you need to enter only integer\n");
+            printf("\nProgram stopped - invalid input, you need to enter only integer\n");
             return 0;
         }
         input[i] = temp;
     }
     if (to_short(input)) 
     {
-        printf("\nprogram stopped - your input is to short you need to enter %d numbers\n",N*N);
+        printf("\nProgram stopped - your input is to short, you need to enter %d numbers\n",N*N);
         return 0;
     }
     if (to_long(input)) 
     {
-        printf("\nprogram stopped - your input is to long you need to enter %d numbers\n",N*N);
+        printf("\nProgram stopped - your input is to long, you need to enter %d numbers\n",N*N);
         return 0;
     }
 
