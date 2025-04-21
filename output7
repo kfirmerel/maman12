@@ -1,7 +1,7 @@
 Hello and welcome to the magic square test.
 Please enter your matrix so that the numbers are provided in row order, from left to right in each row.
 For example - input of: 1 2 3 4 5 6 7 8 9 
-Is represent the matrix that look like this:
+represent the matrix that look like this:
 __________________
 1	2	3
 4	5	6

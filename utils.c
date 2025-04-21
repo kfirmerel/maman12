@@ -21,7 +21,7 @@ int magic_check(int matrix[][N])
         magic_sum += matrix[i][i];
     }
     
-    return (is_valid(matrix) && rows_check(matrix, magic_sum) && coloums_check(matrix, magic_sum) && diagonals_check(matrix, magic_sum));
+    return (is_valid(matrix) && rows_check(matrix, magic_sum) && columns_check(matrix, magic_sum) && diagonals_check(matrix, magic_sum));
             
 }
 int rows_check(int matrix[][N], int magic)
@@ -41,7 +41,7 @@ int rows_check(int matrix[][N], int magic)
     }
     return 1;
 }
-int coloums_check(int matrix[][N], int magic)
+int columns_check(int matrix[][N], int magic)
 {
     int i, j, sum = 0;
     for (i=0 ; i < N ; i++)
@@ -127,9 +127,9 @@ int to_short(int input[])
     }
     return 0;
 }
-int to_long(int input[])
+int to_long(int input[]) 
 {
-    if (input[N*N] != INT_MIN)
+    if (input[N*N] != INT_MIN) 
     {
         return 1;
     }
