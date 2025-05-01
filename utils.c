@@ -1,5 +1,5 @@
 #include "utils.h"
-void printmatrix(int matrix[][N])
+void printmatrix(int matrix[][N]) /*gest the matrix and print it in a nice visual way*/
 {
     int i, j;
     printf("_____________________\n");
@@ -13,18 +13,18 @@ void printmatrix(int matrix[][N])
     }
     printf("_____________________\n");
 }
-int magic_check(int matrix[][N])
+int magic_check(int matrix[][N]) /*gets the matrix, return true if the matrix is magic square*/
 {
     int i, magic_sum = 0;
-    for ( i = 0; i < N; i++) /*check one diagonal for the magic sum*/
+    for ( i = 0; i < N; i++) /*check one diagonal for the initial magic sum*/
     {
         magic_sum += matrix[i][i];
     }
     
-    return (is_valid(matrix) && rows_check(matrix, magic_sum) && columns_check(matrix, magic_sum) && diagonals_check(matrix, magic_sum));
-            
+    return (is_valid(matrix) && rows_check(matrix, magic_sum) && columns_check(matrix, magic_sum) && diagonals_check(matrix, magic_sum)); 
+            /* check if the matrix is valid and if all rows, columns and diagonals sum to the same value */
 }
-int rows_check(int matrix[][N], int magic)
+int rows_check(int matrix[][N], int magic) /*gest the matrix and the sum to check, return true if all rows sum is the same has the function gets*/
 {
     int i, j, sum = 0;
     for ( i = 0 ; i < N ; i++)
@@ -41,7 +41,7 @@ int rows_check(int matrix[][N], int magic)
     }
     return 1;
 }
-int columns_check(int matrix[][N], int magic)
+int columns_check(int matrix[][N], int magic) /*gest the matrix and the sum to check, return true if all columns sum is the same has the function gets*/
 {
     int i, j, sum = 0;
     for (i=0 ; i < N ; i++)
@@ -57,7 +57,7 @@ int columns_check(int matrix[][N], int magic)
     }
     return 1;
 }
-int diagonals_check(int matrix[][N], int magic)
+int diagonals_check(int matrix[][N], int magic) /*gest the matrix and the sum to check, return true if both diagonals sum is the same has the function gets*/
 {
     int i, sum = 0;
     for(i = 0; i < N ; i++)
@@ -81,7 +81,7 @@ int diagonals_check(int matrix[][N], int magic)
 
     return 1;  
 }
-int is_valid(int matrix[][N])
+int is_valid(int matrix[][N]) /*gets the matrix, return true if the numbers besween 1-N*N and there is no number that appears more than once*/
 {
     int i, j;
     int counter[N*N+1];
@@ -115,21 +115,17 @@ int is_valid(int matrix[][N])
     }      
     return 1;
 }
-int to_short(int input[])
+int to_short(int input[]) /*gets the array of input, return true if it has less valeus then he should*/
 {
-    int i;
-    for (i = 0; i < N*N; i++)
+    if(input [N*N-1] != INT_MIN) /* check if in the place of the N*N in the input array there is something that is not the MIN_INT , if so the user enter at least the right amount of numbers that needed */
     {
-        if (input[i] == INT_MIN)
-        {
-            return 1;
-        }
+        return 0;
     }
-    return 0;
+    return 1;
 }
-int to_long(int input[]) 
+int to_long(int input[]) /*gets the array of input, return true if it has more valeus then he should*/
 {
-    if (input[N*N] != INT_MIN) 
+    if (input[N*N] != INT_MIN) /* check if in the place of the N*N+1 in the input array there is something that is not the MIN_INT, if so the user enter more then numbers that needed*/
     {
         return 1;
     }

@@ -1,4 +1,9 @@
-/* program that ask the client for a matrix and tell him if this matrix is a magic square*/
+/*
+Program that ask the client for a matrix and tell him if it a magic square.
+assumptions : 
+1.The user won't enter more than 100 numbers (tokens). 
+2.The user won't enter the minimum intger as input.
+*/
 
 #include "utils.h"
 
@@ -9,10 +14,10 @@ int main(int argc, char *argv[])
     int temp; /* to hold the inpur for checks before insert to the array */
     int type; /* to hold the return value of scanf */
     int counter = 0; /* to count the numbers allready inserted into the matrix */
-    int input[N*N*N]; /* array to hold the input numbers */
+    int input[MAX_INPUT]; /* array to hold the input numbers */
     int matrix[N][N]; /* matrix to arrange the input*/
 
-    for (i = 0; i < N*N*N; i++) /* initialize the input array with number that is not in use */  
+    for (i = 0; i < N*N*N; i++) /* initialize the input array with number that is not in use to recognaize afterwards when the number in the array is not an input from the user  */  
     {
         input[i] = INT_MIN;   
     }
